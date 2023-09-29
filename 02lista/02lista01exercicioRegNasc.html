@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Nascimento</title>
+</head>
+<body>
+    <label > Cidade Natal
+        <input id="txtCidNatal">
+    </label>
+    <label > Ano de Nascimento
+        <input id="txtDtNasc">
+    </label>
+    <br>
+    <button onclick="cadastrar()">Cadastrar</button>
+</body>
+</html>
+
+<script>    
+    function cadastrar()
+        {
+        alert(`Você nasceu na cidade ${txtCidNatal.value} em ${txtDtNasc.value}` )
+        }
+
+</script>

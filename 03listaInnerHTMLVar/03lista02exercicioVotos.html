@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleição</title>
+</head>
+<body>
+    <label> Digite a quantidade de votos que o candidato A recebeu
+        <input type="number" id="votosA">
+    </label> 
+    <br>
+    <label> Digite a quantidade de votos que o candidato B recebeu
+        <input type="number" id="votosB">
+    </label>
+    <br>
+    <label> Digite a quantidade de votos brancos
+        <input type="number" id="votosBranco">
+    </label>
+    <br>
+    <label> Digite a quantidade de votos nulos
+        <input type="number" id="votosNulo">
+    </label>
+    <br>
+    <button onclick="porcentagemVotacao()">Calcular Porcentagem da votação</button>
+    <div id="divVotacao"></div>
+</body>
+</html>
+<script>
+    function porcentagemVotacao()
+        {
+        var a = Number(votosA.value);
+        var b = Number(votosB.value);
+        var invalidos = Number(votosBranco.value)+ Number(votosNulo.value);
+        var total = a + b + invalidos;
+        divVotacao.innerHTML = `Total de votos: ${total} <br>
+        Candidato A: ${(a/total)*100}% (${a} votos) <br>
+        Candidato B: ${(b/total)*100}% (${b} votos) <br>
+        Inválidos: ${(invalidos/total)*100}% (${invalidos} votos)`
+        }
+</script>

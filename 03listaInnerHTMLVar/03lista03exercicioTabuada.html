@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tabuada</title>
+</head>
+<body>
+    <label>Digite o número que quer saber a tabuada
+        <input type="number" name="txtNum" id="txtNum">
+    </label> 
+    <br>
+    <button onclick="calcularTabuada()">Ver Tabuada</button>
+    <div id="divTabuada"></div>
+</body>
+</html>
+
+<script>
+    function calcularTabuada()
+        {
+        var num = Number(txtNum.value)
+        divTabuada.innerHTML=
+        `${num} x 1 = ${num*1} <br>
+        ${num} x 2 = ${num*2} <br>
+        ${num} x 3 = ${num*3} <br>
+        ${num} x 4 = ${num*4} <br>
+        ${num} x 5 = ${num*5} <br>
+        ${num} x 6 = ${num*6} <br>
+        ${num} x 7 = ${num*7} <br>
+        ${num} x 8 = ${num*8} <br>
+        ${num} x 9 = ${num*9}`
+        }
+</script>

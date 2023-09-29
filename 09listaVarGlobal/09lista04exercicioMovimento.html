@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimentando a imagem</title>
+    <style>
+        #foto
+            {
+            width: 400px;
+            }
+    </style>
+</head>
+<body>
+    <button onclick="esquerda()">Esquerda</button>
+    <button onclick="direita()">Direita</button>
+    Digite a quantidade de pixels que vai mover:
+    <input type="number" id="numMov"><br>
+    
+    <br>
+    <br>
+    <img id="foto" src="https://w7.pngwing.com/pngs/813/478/png-transparent-bart-simpson-illustration-bart-simpson-homer-simpson-lisa-simpson-skateboard-cartoon-vehicle-sports.png" alt="foto">
+
+</body>
+</html>
+<script>
+    var largura = 0;
+    function esquerda()
+        {
+        largura -= Number(numMov.value); 
+        foto.style.marginLeft = `${largura}px`;
+        foto.style.transform = `scaleX(1)`;
+        }
+    function direita()
+        {
+        largura += Number(numMov.value);
+        foto.style.marginLeft = `${largura}px`;
+        foto.style.transform = `scaleX(-1)`;
+        }
+</script>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Peso médio no elevador </title>
+    <style>
+        .azul
+            {
+            color: blue;
+            }
+    </style>
+</head>
+<body>
+    <label> Digite a quantidade de homens que entraram no elevador
+        <input type="number" id="txtHomens">
+    </label>
+    <br>
+    <label> Digite a quantidade de mulheres que entraram no elevador
+        <input type="number" id="txtMulheres">
+    </label>    
+    <button onclick="pesoElevador()">Analisar peso</button>
+    <div id="divPeso"></div>
+</body>
+</html>
+
+<script>
+  function pesoElevador()
+    {
+        homens = Number(txtHomens.value);
+        mulheres = Number(txtMulheres.value);
+        pesoEstimado = homens*80+mulheres*60;
+        
+        divPeso.innerHTML = `Este elevador suporta 800kg e o peso estimado dessa lotação é de ${pesoEstimado}`;
+
+        if(pesoEstimado>800)
+            {
+            divPeso.innerHTML += ` <span class="azul"><br> Será necessário descer alguém para que o elevador se movimente</span>`;
+        }
+    }
+</script>

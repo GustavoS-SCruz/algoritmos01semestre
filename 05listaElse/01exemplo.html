@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+</head>
+<body>
+    <label> Digite sua primeira nota
+        <input type="number" id="txtN1">
+    </label>
+    <br>
+    <label> Digite sua segunda nota
+        <input type="number" id="txtN2">
+    </label>
+    <br>
+    <button onclick="calcNota()">Calcular média</button>
+    <div id="divNota"></div>
+</body>
+</html>
+
+<script>
+    function calcNota()
+        {
+        var n1 = Number(txtN1.value);
+        var n2 = Number(txtN1.value);
+        var media = (n1+n2)/2;
+        if(media>=6)
+            {
+            //alert("Aprovado")
+            divNota.innerHTML = `Você foi aprovado`
+            }
+            else
+                {
+                //alert("Reprovado")
+                divNota.innerHTML = `Você foi reprovado`
+                }    
+        }
+</script>

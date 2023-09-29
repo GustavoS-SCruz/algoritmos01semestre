@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economia</title>
+</head>
+<body>
+    <label> Qual a sua meta de economia em R$?
+        <input type="number"id="numEco">
+    </label>
+    <br>
+    <label> Quanto tem guardado?
+        <input type="number"id="numBanc">
+    </label>
+    <br>
+    <button onclick="calcEco()">Analisar Economia</button>
+    <div id="divEco"></div>
+</body>
+</html>
+
+<script>
+    function calcEco()
+        {
+        var eco = Number(numEco.value);
+        var banc = Number(numBanc.value);
+        var meta = banc-eco;
+
+        if(eco<=banc)
+            {
+            divEco.innerHTML = `Parabens a meta foi alcançada`;
+            }
+            else
+                {
+                    divEco.innerHTML = `Força! Ainda em busca da meta! Falta R$${-(meta)}`;
+                }
+        if(eco < banc)
+            {
+            divEco.innerHTML += `<br> Meta ultrapassada em R$${meta}`;
+            }
+        }
+</script>

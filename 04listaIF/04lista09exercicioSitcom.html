@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitcom</title>
+</head>
+<body>
+    <label> Qual a última série sitcom que você assistiu?
+        <input id="txtSerie">
+    </label> 
+    <br>
+    <label> Digite o total de episódios assistidos:
+        <input type="number" id="txtEps">
+    </label> 
+    <br>
+    <button onclick="calcSerie()">Verificar nível</button>
+    <br>
+    <div id="divSerie"></div>
+</body>
+</html>
+
+<script>
+    function calcSerie()
+        {
+        var serie = txtSerie.value;
+        var eps = Number(txtEps.value);
+        var hrEps = eps*22/60;
+        divSerie.innerHTML = `Vejo que você gosta da série ${serie}`;
+        if(hrEps>30) 
+            {
+            divSerie.innerHTML += `Uau, você realmente gosta dessa série!`;
+            } 
+        }
+
+</script>

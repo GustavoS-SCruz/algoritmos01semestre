@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financeiro do tio patinhas</title>
+    <style>
+        body
+            {
+            color: blue ;
+            }
+    </style>
+</head>
+<body>
+    Total guardado no cofrinho: R$<span id="spanGuardado">0</span>
+    <br>
+    Depositos efetuados: <span id="spanDepositos">0</span>
+    <br>
+    Retiradas efetuadas: <span id="spanRetiradas">0</span>
+    <br>
+    <button onclick="deposito05()">Depositar 0,50</button>
+    <button onclick="deposito2()">Depositar 2,00</button>
+    <button onclick="retirar05()">Retirar 0,50</button>
+    <button onclick="retirar()">Retirar</button>
+
+</body>
+</html>
+
+<script>
+    var valor = 0;
+    var depositos = 0;
+    var retiradas = 0;
+    function deposito05()
+        {
+        valor +=0.5;
+        depositos += 1;
+        spanGuardado.innerHTML = `${valor}`;
+        spanDepositos.innerHTML = `${depositos}`;
+        }
+    function deposito2()
+        {
+        valor +=2;
+        depositos += 1;
+        spanGuardado.innerHTML = `${valor}`;
+        spanDepositos.innerHTML = `${depositos}`;
+        }
+    function retirar05()
+        {
+        valor -= 0.5;
+        retiradas += 1;
+        spanGuardado.innerHTML = `${valor}`;
+        spanRetiradas.innerHTML = `${retiradas}`;
+        }
+    function retirar()
+        {
+        valor -= valor;
+        retiradas += 1;
+        spanGuardado.innerHTML = `${valor}`;
+        spanRetiradas.innerHTML = `${retiradas}`;
+        }
+</script>

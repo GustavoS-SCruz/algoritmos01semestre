@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão de fidelidade</title>
+</head>
+<body>
+    Informe a quantidade de passagens que deseja adquirir:
+    <input type="number" id="numPass">
+    <br>
+    <button onclick="calcPass()">Comprar</button>
+    <div id="divPass"></div>
+</body>
+</html>
+<script>
+    function calcPass() 
+        {
+        var pass = Number(numPass.value);
+        var valPass = pass *4.4;
+        var msg = "Quantidade inválida para o Fidelidade!";
+        var descPass = 0;
+        if(pass>=8 && pass<=50)
+            {
+            descPass = valPass*0.97;
+            msg = `Total a pagar:${descPass}`; 
+            if(pass>=20 && pass<=49)
+                {
+                descPass = valPass*0.95;
+                msg = `Total a pagar:${descPass}`; 
+                } 
+                else if(pass == 50)
+                    {
+                    descPass = valPass*0.93;
+                    msg = `Total a pagar:${descPass}`; 
+                    }
+            }
+        divPass.innerHTML = `${msg}`;
+        }
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequência</title>
+    <style>
+        .imgTurista,.imgEstudioso
+            {
+            width: 200px;
+            height: 300px;
+            }
+    </style>
+</head>
+<body>
+    <label> Qual a sua frequência?
+        <input type="number" id="txtFreq">
+    </label>
+    <br>
+    <button onclick="calcFreq()">Analisar Frequência</button>
+    <br>
+    <div id="divFreq"></div>
+</body>
+</html>
+
+<script>
+    function calcFreq()
+        {
+        var freq = Number(txtFreq.value);
+        if(freq<50)
+            {
+            divFreq.innerHTML =`Olha o turista <br><img src="https://img.freepik.com/fotos-gratis/turista-apontando-para-cima_1368-7017.jpg?w=2000" alt="" class="imgTurista">`
+            }
+            else
+                {
+                divFreq.innerHTML =`Olha que estudioso <br><img src="https://media.istockphoto.com/id/969531596/pt/foto/studious-student-doing-homework-late-hours-in-the-night.jpg?s=170667a&w=0&k=20&c=LhzbcBBM6HZ9tGHGqiV9dbP36a0bmOk4GrbPG3WAM2c=" alt="" class="imgEstudioso">`
+                }
+        }
+</script>

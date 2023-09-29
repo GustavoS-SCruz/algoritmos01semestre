@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saldo da conta</title>
+        <style>
+            .vermelho
+                {
+                color: red;
+                }
+        </style>
+</head>
+<body>
+    <label> Qual o saldo da conta?
+        <input type="number" id="txtSaldo">
+    </label> 
+    <br>
+    <label> Qual o valor do débito?
+        <input type="number" id="txtDebt">
+    </label> 
+    <br>
+    <button onclick="calcSaldo()">Analisar conta</button>
+    <br>
+    <div id="divSaldo"></div>
+</body>
+</html>
+
+<script>
+    function calcSaldo()
+        {
+        var saldo = Number(txtSaldo.value);
+        var debt = Number(txtDebt.value);
+        var saldoAtual = saldo-debt;
+        divSaldo.innerHTML = `O saldo atual da conta corrente é de ${saldoAtual}`;
+        if(saldoAtual<0) 
+            {
+            divSaldo.innerHTML = `<strong class="vermelho">O saldo atual da conta corrente é de ${saldoAtual}</strong>`;
+            } 
+        }
+
+</script>

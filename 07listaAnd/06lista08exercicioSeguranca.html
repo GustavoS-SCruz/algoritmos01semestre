@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    Digite seu login:
+    <input id="txtLogin">
+    <br>
+    Digite sua senha:
+    <input type="password" id="txtSenha">
+    <br>
+    Digite seu código de acesso:
+    <input id="txtCod">
+    <br>
+    <button onclick="verfLogin()">Entrar</button>
+</body>
+</html>
+<script>
+    function verfLogin() 
+        {
+        var login = txtLogin.value;
+        var senha = txtSenha.value;
+        var cod = txtCod.value;
+        var autent = "Falha na autenticação";
+            if(login=="SPTech" && senha =="digital" && cod == "123")  
+                {          
+                autent = "Usuário autenticado com sucesso";
+                }
+        alert(autent);
+            
+        }
+</script>

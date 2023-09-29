@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Nota</title>
+</head>
+<body>
+    Digite sua nota:
+    <input type="number" id="numNota">
+    <br>
+    Digite sua frequência:
+    <input type="number" id="numFreq">
+    <br>
+    <button onclick="calcNota()">Avaliar aluno</button>
+</body>
+</html>
+<script>
+    function calcNota() 
+        {
+        var nota = Number(numNota.value);
+        var freq = Number(numFreq.value);
+        var aprov = "Infelizmente não foi dessa vez";
+            if(nota>=6 && freq>=75)  
+                {          
+                aprov = "Parabéns! Aprovado";
+                }
+        alert(aprov);
+            
+        }
+</script>

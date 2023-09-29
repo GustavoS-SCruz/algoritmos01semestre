@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altura de piloto</title>
+</head>
+<body>
+    <h1>Digite o intervalo da altura desejado para os próximos pilotos</h1>
+    Inicial:    
+    <input type="number" id="numAltIni">
+    <br>
+    Final:
+    <input type="number" id="numAltFim">
+    <br>
+    Digite o nome do candidado:
+    <input id="txtCand">
+    <br>
+    Digite a altura do candidato:
+    <input type="number" id="numCand">
+    <br>
+    <button onclick="verfCand()">Verificar</button>
+    <div id="divCand"></div>
+</body>
+</html>
+<script>
+    function verfCand() 
+        {
+        var altMin = Number(numAltIni.value);
+        var altFim = Number(numAltFim.value);    
+        var candNome = txtCand.value;
+        var candNum = Number(numCand.value);
+        
+
+        if(altMin>1 && altFim>altMin)
+            {
+            if(candNum>=altMin && candNum<=altFim)
+                {
+                divCand.innerHTML += `O candidato ${candNome} com altura de ${candNum}m participará do processo de seleção de piloto <br>`;
+                }
+                else
+                    {
+                    divCand.innerHTML += `Infelizmente o candidato ${candNome} com altura de ${candNum}m não atende aos requisitos<br>`
+                    }
+            }
+            else
+                {
+                alert(`Os dados estão inválidos`);
+                }
+        
+        }
+</script>

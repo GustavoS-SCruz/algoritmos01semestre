@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi</title>
+</head>
+<body>
+    <label> Digite o nome do passageiro:
+        <input id="txtPassageiro">
+    </label>
+    <br>
+    <label> Digite a distância em Km até o passageiro:
+        <input type="number" id="txtKm">
+    </label>
+    <br>
+    <label> Digite o tipo da bandeira da corrida:
+        <input min="1" max="3" type="number" id="txtBandeira">
+    </label>
+    <br>
+    <label> Digite o horário:
+        <input min="0" max="23" type="number" id="txtHr">
+    </label>
+    <br>
+    <button onclick="calcBandeira()">Calcular corrida</button>
+    <div id="divBand"></div>
+</body>
+</html>
+
+<script>
+    function calcBandeira()
+        {
+        var passageiro = txtPassageiro.value;
+        var km = Number(txtKm.value);
+        var bandeira = Number(txtBandeira.value);
+        var hr = Number(txtHr.value);
+        var valor = km*1.25;
+        var valorFinal = valor+valor*((bandeira*5)/100) ;   
+        if(hr<=6)
+            {
+            valorFinal = valor+valor*((bandeira*10)/100); 
+            }
+        if(hr>12)
+            {
+            valorFinal = valor+valor*((bandeira*15)/100);  
+            }
+    
+        divBand.innerHTML = `Olá ${passageiro} Sua corrida, será na bandeira ${bandeira}, percorrerá ${km}km e o total da corrida será de R$${valorFinal}`
+        }
+</script>

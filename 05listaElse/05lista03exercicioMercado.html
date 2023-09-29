@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolates do mercado</title>
+</head>
+<body>
+    <label> Quantos chocolates você comprou?
+        <input type="number" id="txtChoco">
+    </label>
+    <br>
+    <button onclick="calcChoco()">Compra</button>
+    <br>
+    <div id="divNota"></div>
+</body>
+</html>
+
+<script>
+    function calcChoco()
+        {
+        var choco = Number(txtChoco.value);
+        var custo = choco*3;
+        if(choco>12)
+            {
+            divNota.innerHTML =`Sua compra foi de R$${custo-(custo/6)}`
+            }
+            else
+                {
+                divNota.innerHTML =`Sua compra foi de R$${custo}`
+                }
+        }
+</script>

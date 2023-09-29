@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador de Ki</title>
+</head>
+<body>
+    <label> Digite o nome do guerreiro Z 
+        <input id="txtNome">
+    </label>
+    <label> Digite o Ki padrão do guerreiro 
+        <input id="txtKi">
+    </label>
+    <button onclick="calculoKi()">Ver Ki em cada forma</button>
+
+</body>
+</html>
+
+<script>
+    function calculoKi()
+        {
+        alert(`${txtNome.value} na forma Super Sayajin seu Ki alcançara o valor de  ${txtKi.value*50} `)
+        alert(`${txtNome.value} na forma Super Sayajin 2 seu Ki alcançara o valor de ${txtKi.value*100}!!! `)
+        }
+</script>

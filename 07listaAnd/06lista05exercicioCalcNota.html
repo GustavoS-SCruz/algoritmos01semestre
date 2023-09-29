@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Nota</title>
+</head>
+<body>
+    Digite sua nota
+    <input type="number" id="numNota">
+    <br>
+    <button onclick="calcNota()">Avaliar aluno</button>
+</body>
+</html>
+<script>
+    function calcNota() 
+        {
+        var nota = Number(numNota.value);
+        var aprov = "Aluno não aprovado";
+            if(nota>=6 && nota<=8.5)  
+                {          
+                aprov = "Aluno comum e aprovado";
+                }
+                else if(nota>8.5 && nota<=10)
+                    {
+                        aprov = `Aluno Exemplar!`;
+                    }
+        alert(aprov);
+            
+        }
+</script>

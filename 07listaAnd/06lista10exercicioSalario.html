@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo da situação financeira</title>
+</head>
+<body>
+    Digite sua idade
+    <input type="number" id="numIdade">
+    <br>
+    Digite seu salário 
+    <input type="number" id="numSlar">
+    <br>
+    <button onclick="calcSlar()">Analisar situação</button>
+    <div id="divSit"></div>
+</body>
+</html>
+<script>
+    function calcSlar() 
+        {
+        var idade = Number(numIdade.value);
+        var salario = Number(numSlar.value);
+        var situacao = "Menor de idade e liso"
+        if(idade<18)
+            {
+            if(salario>2500)
+                {
+                situacao = "Menor de idade e ostentação"
+                }
+            }
+            else
+                {
+                situacao = "Maior de idade e liso"
+                if(salario>=3500 && salario<=7000 )
+                    {
+                    situacao = "Maior de idade e ostentação"
+                    }
+                    else if(salario>7000)
+                        {
+                        situacao = "Maior de idade e mega ostentação"
+                        }
+                }
+        divSit.innerHTML = `${situacao}`;
+        }
+</script>

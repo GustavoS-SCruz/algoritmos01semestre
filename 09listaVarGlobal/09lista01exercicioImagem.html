@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamanho da imagem</title>
+    <style>
+        #foto
+            {
+            width: 200px;
+            }
+    </style>
+</head>
+<body>
+    <img id="foto" src="fotofundo.jpg" alt="foto">
+    <br>
+    <button onclick="aumentar()">Aumentar</button>
+    <button onclick="diminuir()">Diminuir</button>
+</body>
+</html>
+<script>
+    var largura = 200;
+    function aumentar()
+        {
+        largura += 10; 
+        foto.innerHTML=`<style>
+            #foto   
+                {
+                width:${largura}px;
+                }
+            </style>`
+        }
+    function diminuir()
+        {
+        largura -= 10; 
+        foto.style.width = `${largura}px`;
+        }
+
+</script>

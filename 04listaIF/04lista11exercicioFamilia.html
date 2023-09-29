@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Familia</title>
+</head>
+<body>
+    <label> Quantos filhos você tem?
+        <input type="number" id="txtFilhos">
+    </label>
+    <button onclick="funcFml()"> Analisar familia</button>
+    <div id="divFml"></div>
+</body>
+</html>
+<script>
+    function funcFml()
+        {
+        var filhos = Number(txtFilhos.value);
+        if(filhos >= 1)
+            {
+            divFml.innerHTML = `Não tem TV `;
+            }
+        if(filhos >= 2)
+            {
+            divFml.innerHTML += `<br> Não tem internet `;   
+            }
+        if(filhos >= 3)
+            {
+            divFml.innerHTML += `<br> Não tem video game `;    
+            }
+        if(filhos >= 4)
+            {
+            divFml.innerHTML += `<br> Não tem Netflix `;    
+            }
+        }
+</script>

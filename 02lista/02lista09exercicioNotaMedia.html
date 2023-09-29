@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media do Aluno</title>
+</head>
+<body>
+    <label> Digite a nota que tirou na continuada
+        <input id="txtCont">
+    </label> <br>
+    <label> Digite a nota que tirou na semestral 
+        <input id="txtSem">
+    </label> <br>
+    <label> Digite o seu nome 
+        <input id="txtNome">
+    </label> <br>
+    <button onclick="calculoMedia()">Calcular Media</button>
+
+</body>
+</html>
+
+<script>
+    function calculoMedia()
+        {
+        alert(`A média de ${txtNome.value} será de ${txtCont.value*0.4+txtSem.value*0.6}  `)
+        }
+</script>

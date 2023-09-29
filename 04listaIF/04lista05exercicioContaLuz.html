@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta de Luz</title>
+</head>
+<body>
+    <label> Qual a quantidade de KWh consumidas por mês?
+        <input type="number" id="txtKwh">
+    </label> 
+    <br>
+    <button onclick="calcLuz()">Calcular conta de luz</button>
+    <br>
+</body>
+</html>
+
+<script>
+    function calcLuz ()
+        {
+        var kwh = Number(txtKwh.value);
+        var consumo = kwh*0.85;
+        if(consumo<100) 
+            {
+            var consumo = consumo*0.9;
+            } 
+            alert (`O valor da conta é de ${consumo}`);
+        }
+
+</script>

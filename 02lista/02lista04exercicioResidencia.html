@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Residência</title>
+</head>
+<body>
+    <label> Digite o nome da sua rua/avenida
+        <input id="txtEndereco">
+    </label>
+    <label> Digite o numero da sua casa 
+        <input id="txtNumCasa">
+    </label>
+    <button onclick="residencia()">Onde moro</button>
+
+</body>
+</html>
+
+<script>
+    function residencia()
+        {
+        alert(`O seu logradouro é ${txtEndereco.value} `)
+        alert(`O número do seu logradouro é ${txtNumCasa.value} `)
+        }
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajuda na COVID19</title>
+</head>
+<body>
+    Digite sua renda
+    <input type="number" id="numRend">
+    <br>
+    Digite sua renda familiar
+    <input type="number" id="numRendFml">
+    <br>
+    <button onclick="calcRenda()">Verificar ajuda</button>
+</body>
+</html>
+<script>
+    function calcRenda() 
+        {
+        var rend = Number(numRend.value);
+        var rendFml = Number(numRendFml.value);
+        if(rend<=1050 && rendFml<=2100)
+            {
+            alert("Você terá direito")
+            }   
+            else
+                {
+                alert("Vocẽ NÃO terá direito")
+                }
+        }
+</script>

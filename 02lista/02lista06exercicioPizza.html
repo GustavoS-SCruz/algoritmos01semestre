@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisão do valor da pizza</title>
+</head>
+<body>
+    <label> Digite o valor da pizza 
+        <input id="txtValor">
+    </label>
+        <label> Digite a quantidade de amigos para dividir a conta
+        <input id="txtAmgs">
+    </label>
+    <button onclick="divisaoPizza()">#lovePizza</button>
+</body>
+</html>
+
+<script>
+    function divisaoPizza()
+        {
+        alert(`Cada um dos ${txtAmgs.value} amigos vai pagar R$${txtValor.value/txtAmgs.value}`)
+        }
+</script>

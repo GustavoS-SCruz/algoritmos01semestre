@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura para conserva</title>
+    <style>
+        .imgComida
+            {
+            width: 300px;
+            height: 200px;
+            }
+    </style>
+</head>
+<body>
+    <label> Qual é a temperatura atual em °c?
+        <input type="number" id="txtTemp">
+    </label>
+    <br>
+    <button onclick="calcTemp()">Verificar clima</button>
+    <div id="divTemp"></div>
+</body>
+</html>
+
+<script>
+    function calcTemp()
+        {
+        var clima = Number(txtTemp.value);
+        if(clima<10)
+            {
+            divTemp.innerHTML = `A temperatura está apropriada para conserva <br> <img src="https://uploads.metropoles.com/wp-content/uploads/2023/07/04100408/Alimentos_1.jpg" alt="" class="imgComida">`
+            }
+            else
+                {
+                    divTemp.innerHTML = `A temperatura está inapropriada para conservar <img src="https://static.tuasaude.com/media/article/ed/zg/como-identificar-alimentos-estragados_22594_l.webp" alt="" class="imgComida">` 
+                }
+        }
+</script>

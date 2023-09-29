@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ki</title>
+</head>
+<body>
+    <label> Digite o valor do Ki do guerreiro
+        <input type="number" id="txtKi"> <br>
+    </label>
+    <button onclick="calculoSsj()">SSJ</button>
+    <button onclick="calculoSsj2()">SSJ 2</button>
+    <button onclick="calculoSsj3()">SSJ 3</button> 
+    <div id="divSsj"></div>
+</body>
+</html>
+<script>
+    var ki;
+    function calculoSsj()
+        {
+        ki = Number(txtKi.value);
+        ssj = ki*50
+        divSsj.innerHTML = `Após se transformar em <u>SSJ</u>, o ki desse Sayajin passa a ser de  <u>${ssj}</u>`;
+        }
+    function calculoSsj2()
+        {
+        ki = Number(txtKi.value);
+        ssj2 = ki*100
+        divSsj.innerHTML = `Após se transformar em <u>SSJ2</u>, o ki desse Sayajin passa a ser de  <u>${ssj2}</u>`;
+        }
+    function calculoSsj3()
+        {
+        ki = Number(txtKi.value);
+        ssj3 = ki*200
+        divSsj.innerHTML = `Após se transformar em <u>SSJ3</u>, o ki desse Sayajin passa a ser de  <u>${ssj3}</u>`;
+        }
+</script>

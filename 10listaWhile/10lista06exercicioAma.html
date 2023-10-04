@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem você mais ama?</title>
+</head>
+<body>
+    Quem você mais ama? 
+    <input type="text" id="txtAma">
+    <br>
+    Digite um número que represente seu amor
+    <input type="number" id="numAma">
+    <button onclick="calcAmor()">Expressar amor</button>
+    <div id="divAmor"></div>
+</body>
+</html>
+<script>
+    function calcAmor()
+        {
+        var cont = 1;
+        var num = Number(numAma.value)
+        var pessoa = txtAma.value
+        divAmor.innerHTML ='';
+        while(cont <=num)
+            {
+            divAmor.innerHTML +=`${cont} - ${pessoa}, eu te amo! Sempre lembre disso<br>`
+            cont ++;
+            }
+        }
+</script>

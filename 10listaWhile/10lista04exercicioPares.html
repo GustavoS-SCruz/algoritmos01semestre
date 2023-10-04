@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pares</title>
+</head>
+<body>
+    <button onclick="pares()">S2 Pares</button>
+    <div id="divPares"></div>
+</body>
+</html>
+<script>
+    function pares()
+        {
+        num = 0;
+            divPares.innerHTML ='';
+            while(num<=100)
+                {
+                divPares.innerHTML += `${num} <br>`;
+                num +=2
+                }
+
+        }
+</script>

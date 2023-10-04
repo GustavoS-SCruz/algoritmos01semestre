@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frase de escolha V2</title>
+</head>
+<body>
+    <input id="txtFrase">
+    <button onclick="materia()">Diga algo sobre a matéria de Algoritmos</button>
+    <div id="divExibir"></div>
+</body>
+</html>
+<script>
+    function materia()
+        {
+        var num = 1;
+        var frase = txtFrase.value
+            divContar.innerHTML ='';
+            while(num<=7)
+                {
+                divExibir.innerHTML += `${num}.${frase}<br>`;
+                num ++;
+                } 
+        }
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentes Brilhantes</title>
+</head>
+<body>
+    Digite a nota no Enem do aluno
+    <input type="number" id="numEnem">
+    <br>
+    Digite a nota no vestibular interno do aluno
+    <input type="number" id="numVest">
+    <br>
+    <button onclick="avaliar()">Avaliação</button>
+</body>
+</html>
+
+<script>
+
+    function avaliar()
+        {
+        var enem = Number(numEnem.value);
+        var vest = Number(numVest.value);
+        if(enem >= 800 || vest >= 700)
+            {
+            alert(`Parabéns! Aprovado`);
+            }
+            else
+                {
+                alert(`Tente semestre que vem`);
+                }
+        }
+</script>

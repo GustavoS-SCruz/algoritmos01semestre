@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dieta</title>
+</head>
+<body>
+    <label for="numPao">Quantos pães franceses você come por dia?
+        <input type="number" id="numPao">
+    </label>
+    <br>
+    <label for="numBolacha">Quantos pacotes de bolacha tem comido por dia?
+        <input type="number" id="numBolacha">
+    </label>
+    <br>
+    <label for="numAchocolatado">Quantos copos de achocolatado tem tomado por dia?
+        <input type="number" id="numAchocolatado">
+    </label>
+    <br>
+    <button onclick="calcDieta()">Verificar Calorias</button>
+    <div id="divDieta"></div>
+</body>
+</html>
+
+<script>
+    function calcDieta()
+        {
+        var pao = Number(numPao.value);
+        var bolacha = Number(numBolacha.value);
+        var achocolatado = Number(numAchocolatado.value);
+        var calorias = pao*50+bolacha*80+achocolatado*70
+
+        if(calorias<200) divDieta.innerHTML = `Parabéns, vai ficar em forma!`;
+        else if(calorias<=400) divDieta.innerHTML = `Cuidado, vai ficar menos saudável!`;
+        else divDieta.innerHTML = `Alerta crítico de saúde`;
+        }
+
+</script>

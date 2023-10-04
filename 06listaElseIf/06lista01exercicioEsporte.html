@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esporte por altura</title>
+</head>
+<body>
+    <label for="numAlt"> Digite sua altura
+        <input type="number" id="numAlt">
+    </label>
+    <br>
+    <button onclick="calcAlt()">calcular</button>
+    <div id="divAlt"></div>
+</body>
+</html>
+<script>
+    function calcAlt()
+        {
+        var alt = Number(numAlt.value);
+        if(alt<=1.65) divAlt.innerHTML = `Você pode ser piloto de corrida`;
+        else if(alt<=1.8) divAlt.innerHTML = `Você pode ser jogador de futebol`;
+        else divAlt.innerHTML = `Você pode ser jogador de volei ou basquete      `;
+
+        }
+</script>

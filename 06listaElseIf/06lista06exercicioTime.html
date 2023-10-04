@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <label for="txtTime"> Digite dos grandes times de São Paulo você torce?(digite tudo em minusculo, sem acento e sem espaço):
+        <input id="txtTime">
+    </label>
+    <br>
+    <button onclick="descTime()">Fale sobre esse time</button>
+    <div id="divTime"></div>
+</body>
+</html>
+<script>
+    function descTime()
+        {
+        var time = txtTime.value;
+        if (time =='corinthians')
+            {
+            divTime.innerHTML = `<style>
+            body{
+                background-color:black;
+                color:white;
+                }
+            </style>
+            Salve o Corinthians`
+            }
+            else if (time =='palmeiras')
+                {
+                divTime.innerHTML = `<style>
+                body{
+                background-color:green;
+                color:white;
+                }
+                </style>
+                Salve o alviverde imponente`
+                }
+                else if (time =='santos')
+                    {
+                    divTime.innerHTML = `
+                    Agora quem dá a bola é o Santos`
+                    }
+                    else if (time =='saopaulo')
+                        {
+                        divTime.innerHTML = `
+                    <style>
+                    body
+                        {
+                        background-color:red;
+                        }
+                    </style>
+                    Salve o Tricolor Paulista`
+                        }
+        }
+</script>

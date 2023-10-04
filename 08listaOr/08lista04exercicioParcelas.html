@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisar parcelamento</title>
+</head>
+<body>
+    O modo de pagamento é em dinheiro, crédito, débito ou boleto?
+    <input id="txtModo">
+    <br>
+    <button onclick="analisar()">Analisar compra</button>
+</body>
+</html>
+
+<script>
+
+    function analisar()
+        {
+        var pag = txtModo.value;
+
+        if(pag == "dinheiro" || pag == "débito")
+            {
+            alert(`Você terá que pagar a vista`);
+            }
+            else if(pag == "crédito" || pag == "boleto")
+                {
+                alert(`O pagamento poderá ser parcelado`);
+                } else alert("Tipo de pagamento inválido");
+        }
+</script>

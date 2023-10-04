@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar preferência de empresa</title>
+</head>
+<body>
+    Qual o nome da empresa?
+    <input id="txtNome">
+    <br>
+    Qual o valor da bolsa?
+    <input type="number" id="numBolsa">
+    <br>
+    Qual o valor do VR?
+    <input type="number" id="numVr">
+    <br>
+    Qual o tempo de deslocamento da empresa até a faculdade?
+    <input type="number" id="numTemp">
+    <br>
+    <button onclick="calcular()">É preferida?</button>
+    <div id="divPreferida"></div>
+</body>
+</html>
+
+<script>
+
+    function calcular()
+        {
+        var nome = txtNome.value;
+        var bolsa = Number(numBolsa.value);
+        var vr = Number(numVr.value);
+        var temp = Number(numTemp.value);
+        if(bolsa>=1800 || vr>=20 || temp<=30)
+            {
+            divPreferida.innerHTML += `A empresa ${nome} é uma de suas preferências <br>`;
+            }
+            else
+                {
+                divPreferida.innerHTML += `A empresa ${nome} está fora da sua lista <br>`;
+                }
+        }
+</script>

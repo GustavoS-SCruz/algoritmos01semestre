@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fases da vida</title>
+</head>
+<body>
+    Digite sua idade
+    <input type="number" id="numIdade" onkeyup="fase()">
+    <div id="divFase"></div>
+</body>
+</html>
+<script>
+    
+    function fase()
+        {
+        var idade = Number(numIdade.value);
+        var i = 0;
+        divFase.innerHTML='';
+        while(i<=idade)
+            {
+            if(i<=4)
+                {
+                divFase.innerHTML += `${i} anos (Primeira Infância) <br>`;
+                i++
+                }
+                else if(i<=6)
+                    {
+                    divFase.innerHTML += `${i} anos (Pré-escola) <br>`;
+                    i++
+                    }
+                    else if(i<=10)
+                        {
+                        divFase.innerHTML += `${i} anos (Segunda Infância) <br>`;
+                        i++
+                        }
+                        else if(i<=18)
+                            {
+                            divFase.innerHTML += `${i} anos (Adolescência) <br>`;
+                            i++
+                            }
+                            else if(i<=50)
+                                {
+                                divFase.innerHTML += `${i} anos (Fase Adulta) <br>`;
+                                i++
+                                }
+                                else if(i<=100)
+                                    {
+                                    divFase.innerHTML += `${i} anos (Melhor idade) <br>`;
+                                    i++
+                                    } 
+                                    else
+                                        {
+                                        divFase.innerHTML += `${i} anos (Matusalém) <br>`;
+                                        i++
+                                        }
+            }
+        }
+</script>

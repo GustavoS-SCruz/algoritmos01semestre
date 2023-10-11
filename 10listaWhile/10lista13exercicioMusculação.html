@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musculação</title>
+</head>
+<body>
+    De quantos em quantos dias faz musculação?
+    <input type="number" id="numMusc">
+    <br>
+    <button onclick="musc()">Exibir rotina mensal</button>
+    <div id="divMusc"></div>
+</body>
+</html>
+<script>
+    function musc()
+        {
+        var musc = Number(numMusc.value);
+        var i = 0;
+        divMusc.innerHTML = ``;
+        while(i<30)
+            {
+            if(i % musc == 0)
+            {
+            divMusc.innerHTML += `Dia ${i+1} - Musculação <br>`
+            }
+            else{
+            divMusc.innerHTML += `Dia ${i+1} -  Comer, dormir etc <br>`   
+            }
+            i++;    
+            }
+        }
+</script>

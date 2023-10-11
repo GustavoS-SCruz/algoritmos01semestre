@@ -6,6 +6,11 @@
     <title>Pares</title>
 </head>
 <body>
+    <h1>Adicione um intervalo crescente</h1>
+    Primeiro valor:
+    <input type="number" id="numero1">
+    Segundo valor:
+    <input type="numver" id="numero2">
     <button onclick="pares()">S2 Pares</button>
     <div id="divPares"></div>
 </body>
@@ -13,16 +18,16 @@
 <script>
     function pares()
         {
-        num = 0;
-            divPares.innerHTML ='';
-            while(num<=100)
+        num1 = Number(numero1.value);
+        num2 = Number(numero2.value);
+        divPares.innerHTML ='';
+            while(num1<=num2)
                 {
-                if(num%2==0)
+                if (num1 % 2 == 0)
                     {
-                    divPares.innerHTML += `${num} <br>`;
+                    divPares.innerHTML += `${num1} <br>`;
                     }
-                num ++;
+                num1 ++;
                 }
-
         }
 </script>

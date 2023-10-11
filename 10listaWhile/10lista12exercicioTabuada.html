@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taboada</title>
+</head>
+<body>
+    Escolha uma taboada:
+    <input type="number" id="numTabo">
+    <br>
+    Até onde ela vai?
+    <input type="number" id="numFim">
+    <br>
+    <button onclick="taboada()">Ver taboada</button>
+    <div id="divTaboada"></div>
+</body>
+</html>
+<script>
+    function taboada()
+        {
+        var taboada = Number(numTabo.value);
+        var final = Number(numFim.value);
+        var i = 1;
+        divTaboada.innerHTML = ``;
+        while(i<=final)
+            {
+            var resultado = taboada;
+             resultado *= i;
+            divTaboada.innerHTML += `${taboada} x ${i} = ${resultado} <br>`;
+            i++;
+            }
+        }
+</script>

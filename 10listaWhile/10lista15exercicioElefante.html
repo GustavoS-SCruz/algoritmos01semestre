@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elefantes</title>
+</head>
+<body>
+    Escolha a quantidade de elefantes
+    <input type="number" id="numElef">
+    <br>
+    <button onclick="elef()">Atazanar medium</button>
+    <div id="divElef"></div>
+</body>
+</html>
+<script>
+    function elef()
+        {
+        var elef = Number(numElef.value);
+        var i = 1;
+        var incomoda = 'incomodam, ';
+        divElef.innerHTML = ``;
+        if(elef!=1)
+            {
+            while(i<elef)
+                {
+                divElef.innerHTML += `1 elefante incomoda muita gente! <br>`;
+                incomoda += ' incomodam, ';
+                divElef.innerHTML += `${i+1} elefantes ${incomoda} muito mais! <br>`;
+                i++;
+                }
+            }
+            else
+                {
+                divElef.innerHTML += `1 elefante incomoda muita gente! <br>`;
+                i++
+                }
+        }
+</script>

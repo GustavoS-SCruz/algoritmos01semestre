@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café com leite</title>
+</head>
+<body>
+    Quantas xícaras de café com leite acha que ja bebeu na vida?
+    <input type="number" id="numXicara">
+    <button onclick="cafe()">Ver a quantidade</button>
+    <div id="divCafe"></div>
+</body>
+</html>
+<script>
+    function cafe()
+        {
+        var xicara = Number(numXicara.value);
+        var rodadas = xicara*2;
+        var leite = 2;
+        var i = 0;
+        divCafe.innerHTML = '';
+        while(i<rodadas)
+            {
+                while(i==leite)
+                {
+                    divCafe.innerHTML += '<img style="width: 50px;" src="https://minhasaude.proteste.org.br/wp-content/uploads/2023/06/colher-carregando-punhado-de-leite-em-po-sobre-fundo-branco.jpg" alt="">';
+                    leite+=2;
+                }
+                i++;
+                divCafe.innerHTML += '<img style="width: 50px;" src="https://img.freepik.com/fotos-premium/cafe-em-po-na-colher-de-madeira-em-branco_253984-1697.jpg?w=900" alt="">'
+                }
+        }
+</script>

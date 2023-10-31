@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coca</title>
+</head>
+<body>
+    Quantas cocas acha que ja bebeu na vida?
+    <input type="number" id="numCoca">
+    <button onclick="coca()">Ver a quantidade</button>
+    <div id="divCoca"></div>
+</body>
+</html>
+<script>
+    function coca()
+        {
+        var coca = Number(numCoca.value);
+        var i = 0;
+        divCoca.innerHTML = '';
+        while(i<coca)
+            {
+            divCoca.innerHTML += '<img style="width: 50px;" src="https://dlpvinhos.agilecdn.com.br/00120001_1.jpg" alt="">';
+            i++;
+            }
+        }
+</script>

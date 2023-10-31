@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premiação da NBA</title>
+    <style>
+        .divTime
+            {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            }
+        #divTimes
+            {
+            display: block;
+            }
+        .divPontos
+            {
+            display: flex;
+            }
+        .divVisu
+            {
+            display: flex;
+            }
+    </style>
+</head>
+<body>
+    <h1>Premiação</h1>
+    Valor total da premiação:
+    <input type="number" id="numPremio">
+    <br>
+    Numero da rodada:
+    <input type="number" id="numRodadas">
+    <br>
+    Resultado do time A:
+    <select name="" id="selectTimeA">
+        <option >Vitoria</option>
+        <option >Derrota</option>
+        <option >Empate</option>
+    </select>
+    <br>
+    Resultado do time B:
+    <select name="" id="selectTimeB">
+        <option >Vitoria</option>
+        <option >Derrota</option>
+        <option >Empate</option>
+    </select>
+    <br>
+    Resultado do time C:
+    <select name="" id="selectTimeC">
+        <option >Vitoria</option>
+        <option >Derrota</option>
+        <option >Empate</option>
+    </select>
+    <br>
+    <button onclick="rodada()">Realizar rodada</button>
+    <button onclick="premiacao()">Revelar premiação</button>
+    <div id="divRodada"></div>
+    <div id="divVisu" class="divVisu">
+        <div id="divTimes"></div>
+        <div id="divRodadas"></div>
+    </div>
+</body>
+</html>
+<script>
+    var pontosA = 0;
+    var pontosB = 0;
+    var pontosC = 0;
+    var rodadaAtual = 0;
+    var premio = 0;
+    var rodadas = 0
+    function rodada()
+        {
+        var selectA = selectTimeA.value;
+        var selectB = selectTimeB.value;
+        var selectC = selectTimeC.value;
+        premio = Number(numPremio.value);
+        rodadas = Number(numRodadas.value);
+        rodadaAtual++;
+        var textoTimes = '';
+        var textoRodadas = '';
+        if(premio<1000 || rodadas <1)
+                {
+                alert('Dados inválidos para a rodada');
+                }
+                else
+                    {
+                    if(selectA =='Vitoria')
+                        {
+                        pontosA +=3;
+                        }else if(selectA == 'Empate')
+                            {
+                            pontosA +=1;
+                            }
+                    
+                    if(selectB =='Vitoria')
+                        {
+                        pontosB +=3;
+                        }else if(selectB == 'Empate')
+                            {
+                            pontosB +=1;
+                            }
+                    
+                    if(selectC =='Vitoria')
+                        {
+                        pontosC +=3;
+                        }else if(selectC == 'Empate')
+                            {
+                            pontosC +=1;
+                            }
+
+                    divRodada.innerHTML = `Rodada atual: ${rodadaAtual}`;
+                    textoTimes += `Time A: `;
+                    textoRodadas += `<div class ='divPontos'> `;
+                    for(var i=0;i<pontosA;i++)
+                        {
+                        textoRodadas += `<div class ='divTime' style='background-color: red'></div> `;
+                        }
+                    textoRodadas += `</div>`;
+
+                    textoTimes += ` <br> Time B: `;
+                    textoRodadas += `<div class ='divPontos'> `;
+                    for(var i=0;i<pontosB;i++)
+                        {
+                        textoRodadas += `<div class ='divTime' style='background-color: green'></div> `;
+                        }
+                    textoRodadas += `</div>`;
+                    textoTimes += `<br> Time C:`;
+                    textoRodadas += `<div class ='divPontos'> `;
+                    for(var i=0;i<pontosC;i++)
+                        {
+                        textoRodadas += `<div class ='divTime' style='background-color: blue'></div> `;
+                        }
+                    textoRodadas += `</div>`;
+                    divTimes.innerHTML = `${textoTimes}`
+                    divRodadas.innerHTML = `${textoRodadas}`
+                    }
+                    if(rodadaAtual==rodadas)
+                        {
+                        premiacao()
+                        }
+        }
+        function premiacao() {
+            var pontuacaoTotal = pontosA+pontosB+pontosC;
+            var premiacaoA = (pontosA/pontuacaoTotal*100).toFixed(2);
+            var premiacaoB = (pontosB/pontuacaoTotal*100).toFixed(2);
+            var premiacaoC = (pontosC/pontuacaoTotal*100).toFixed(2);
+            divTimes.innerHTML = `Time A: ${premiacaoA}% da pontuação <br>`;
+            divTimes.innerHTML += `Time B: ${premiacaoB}% da pontuação <br>`;
+            divTimes.innerHTML += `Time C: ${premiacaoC}% da pontuação <br>`;
+        }
+</script>

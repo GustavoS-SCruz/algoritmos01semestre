@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco</title>
+</head>
+<body>
+    Quantos depositos você fez no banco?
+    <input type="text" id="numDepositos">
+    <br>
+    Quanto você depositou em cada deposito?
+    <input type="text" id="numDeposito">
+    <br>
+    <button onclick="banco()">Acompanhar grana</button>
+    <div id="divBanco"></div>
+</body>
+</html>
+<script>
+    function banco() 
+        {
+        var numDep = Number(numDepositos.value);
+        var dep = Number(numDeposito.value);
+        var i = 0;
+        while(i<numDep)
+            {
+            i++;
+            divBanco.innerHTML += `${i}º Mês: R$${dep*i}<br> `;
+            }
+        divBanco.innerHTML += `Total guardado: R$${dep*i}<br> `;
+        }
+</script>

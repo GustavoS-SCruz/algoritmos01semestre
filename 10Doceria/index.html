@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doceria</title>
+</head>
+<body>
+    <h1>Doceria</h1>
+    <h2>Macarons</h2>
+    Quantos macarons serão vendidos e qual valor de cada unidade?
+    <br>
+    Quantidade:<input type="number" id="numMacaron">
+    <br>
+    Valor:<input type="number" id="valorMacaron">
+    <br>
+    <h2>Brigadeiros</h2>
+    Quantos brigadeiros serão vendidos e qual valor de cada unidade?
+    <br>
+    Quantidade:<input type="number" id="numBriga">
+    <br>
+    Valor:<input type="number" id="valorBriga">
+    <br>
+    <h2>Cupcakes</h2>
+    Quantos cupcakes serão vendidos e qual valor de cada unidade?
+    <br>
+    Quantidade:<input type="number" id="numCup">
+    <br>
+    Valor:<input type="number" id="valorCup">
+    <br>
+    <h2>Cheesecakes</h2>
+    Quantos cheesecakes serão vendidos e qual valor de cada unidade?
+    <br>
+    Quantidade:<input type="number" id="numCheese">
+    <br>
+    Valor:<input type="number" id="valorCheese">
+    <br>
+    <br>
+    <button onclick="vendas()">Verificar vendas</button>
+    <div id="divVendas"></div>
+    
+
+</body>
+</html>
+
+<script>
+    function vendas()
+        {
+        var macarons = Number(numMacaron.value);
+        var brigas = Number(numBriga.value);
+        var cups = Number(numCup.value);
+        var cheeses = Number(numCheese.value);
+        var valorMacarons = Number(valorMacaron.value);
+        var valorBrigas = Number(valorBriga.value);
+        var valorCups = Number(valorCup.value);
+        var valorCheeses = Number(valorCheese.value);
+        var i = 1;
+        var totalVendas = macarons* valorMacarons + brigas * valorBrigas + cups * valorCups + cheeses *valorCheeses; 
+        divVendas.innerHTML = '';
+        if(macarons < 0 || brigas < 0 || cups < 0 || cheeses < 0 || valorMacarons < 0 || valorBrigas < 0 || valorCups < 0 || valorCheeses < 0 )
+            {
+            alert('Um dos valores está negativo, por favor digite novamente')
+            }
+            else
+                {
+                while(i<=macarons)
+                    {
+                    divVendas.innerHTML += ` Venda ${i} de macarons <img style="width: 30px;" src="https://www.vanillepatisserie.com/skin/common_files/admin/flavours/pro-macarons-raspberry.jpg" alt="Macaron"> por R$${valorMacarons} cada <br>` 
+                    i++;
+                    }
+                i= 1;
+                while(i<=brigas)
+                    {
+                    divVendas.innerHTML += ` Venda ${i} de brigadeiros <img style="width: 30px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr-d-Vkapp5K5GrjitoFURs7enrOXoZyMd4A&usqp=CAU" alt="Macaron"> por R$${valorBrigas} cada<br>`
+                    i++;
+                    }
+                i= 1;
+                while(i<=cups)
+                    {
+                    divVendas.innerHTML += ` Venda ${i} de cupcakes <img style="width: 30px;" src="https://casaeconstrucao.org/wp-content/uploads/2022/07/7-embalagem-transparente-e-individual-para-cupcake.jpg" alt="Macaron"> por R$${valorCups} cada <br>`
+                    i++;
+                    }
+                i= 1;
+                while(i<=cheeses)
+                    {
+                    divVendas.innerHTML += ` Venda ${i} de cheesecakes <img style="width: 30px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRgpPnUU6xC-0X5OBiF-3UV4Ieh_WwMqA7jA&usqp=CAU" alt="Macaron"> por R$${valorCheeses} cada <br>`
+                    i++;
+                    }
+                    divVendas.innerHTML +=`<br>Com a quantidade de ${macarons} Macarons, ${brigas} Brigadeiros, ${cups
+                    } Cupcakes e ${cheeses} Cheesecakes, a venda totalizará R$${totalVendas}`
+                }
+        }    
+</script>

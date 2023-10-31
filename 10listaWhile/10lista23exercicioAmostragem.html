@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amostragem</title>
+</head>
+<body>
+    Digite o limite inferior da amostragem
+    <input type="number" id="numInf">
+    <br>
+    Digite o limite superior da amostragem
+    <input type="number" id="numSup">
+    <br>
+    Digite o número que sera calculado na amostragem
+    <input type="number" id="numAmost">
+    <br>
+    <button onclick="contar()">Contar</button>
+    <div id="divContar"></div>
+
+</body>
+</html>
+<script>
+    function contar()
+        {
+        var inf = Number(numInf.value);
+        var sup = Number(numSup.value);
+        var amost = Number(numAmost.value);
+        var exibidos = 0;
+        var somatoria = 0;
+        var final = 0;
+        var inicial = 0;
+        var i = inf;
+        if(inf<=1 || sup <=inf || sup >=100 || amost<3 || amost>10)
+            {
+            divContar.innerHTML = 'Algum dos valores está invalido';
+            }
+            else
+                {
+                divContar.innerHTML = '';
+                while(i<=sup)
+                    {
+                    if(i%amost ==0)
+                        {
+                        divContar.innerHTML += `${i} <br>`;
+                        exibidos++;
+                        somatoria += i;
+                        final = i;
+                        inicial = amost; 
+                        }
+                    i++;
+                    }
+                divContar.innerHTML += `QUANTIDADE TOTAL DE NÚMEROS EXIBIDOS: ${exibidos} <br>`;
+                divContar.innerHTML += `SOMATÓRIO DOS NÚMEROS EXIBIDOS: ${somatoria} <br>`;
+                divContar.innerHTML += `MÉDIA DOS NÚMEROS EXIBIDOS: ${somatoria/exibidos} <br>`;
+                divContar.innerHTML += `MAIOR NÚMERO EXIBIDO:  ${final} <br>`;
+                divContar.innerHTML += `  MENOR NÚMERO EXIBIDO: ${divContar.innerHTML[0]+divContar.innerHTML[1]} <br>`;
+                }
+        }
+</script>

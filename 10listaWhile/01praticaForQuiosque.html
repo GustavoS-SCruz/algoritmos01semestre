@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quisque de Coco</title>
+</head>
+<body>
+    <h1>Quiosque Mirosmar</h1>
+    Qual a quantidade de águas engarrafadas?
+    <input type="number" id="numGarrafas">
+    <br>
+    Qual a quantidade de cocos?
+    <input type="number" id="numCocos">
+    <br>
+    <button onclick="quiosque()">Abrir o quiosque</button>
+    <div id="divQuiosque"></div>
+    <div id="divVendas"></div>
+    <div id="divEncerrar"></div>
+</body>
+</html>
+<script>
+    var select = '';
+    var selectTexto = '';
+    var qntVendas = 0;
+    var garrafas = 0;
+    var cocos = 0;
+    var estoqueGarrafas = 0;
+    var estoqueCocos = 0;
+    var vendaGarrafas = 0;
+    var vendaCocos = 0;
+    function quiosque()
+        {
+        garrafas = Number(numGarrafas.value);
+        cocos = Number(numCocos.value);
+        if(garrafas<100)
+            {
+            alert('Com essa quantidade de Água engarrafada não dá para abrir o quiosque');
+            }
+            else if(cocos<200)
+                {
+                alert('Com essa quantidade de Coco fechado não dá para abrir o quiosque');
+                }
+                else
+                    {
+                    divQuiosque.innerHTML = '';
+                    divQuiosque.innerHTML +=`
+                    <h1>Estoque</h1>
+                    Quantidade de garrafas:<strong>${garrafas}</strong> <br>
+                    Quantidade de cocos:<strong>${cocos}</strong> <br>
+                    <br>
+                    <h2>Operações de vendas</h2>
+                    <br>
+                    Quantidade vendida:<input type='number' id='vendas'><br>
+                    Produto vendido:
+                    <select id="tipo">
+                        <option value="tipo1">Coco</option>
+                        <option value="tipo2">Agua de coco na garrafa</option>
+                    </select>
+                    <br>
+                    <button onclick="venda()">Registrar venda</button>
+                    <button onclick="turno()">Encerrar turno</button>
+                    `;
+                    
+                    if(garrafas<=1000)
+                        {
+                        divVendas.innerHTML +='<br>Engarrafe mais água de coco <br>';
+                        }
+                    if(cocos<=2000)
+                        {
+                        divVendas.innerHTML +='<br>Compre mais Coco <br><br>';
+                        }
+                    estoqueGarrafas = garrafas;
+                    estoqueCocos = cocos;
+                    }
+        }
+    function venda()
+        {
+        qntVendas = Number(vendas.value);
+        select = tipo.value;
+        if(select=='tipo1')
+            {
+            selectTexto ='Cocos fechados'
+            estoqueCocos -= qntVendas;
+            vendaCocos+=qntVendas;
+            divVendas.innerHTML += `Com a venda de ${qntVendas} ${selectTexto} o saldo do estoque é ${estoqueCocos} <br>`;
+            }
+            else
+                {
+                selectTexto ='Águas de coco engarrafadas'
+                estoqueGarrafas -= qntVendas;
+                vendaGarrafas+=qntVendas;
+                divVendas.innerHTML += `Com a venda de ${qntVendas} ${selectTexto} o saldo do estoque é ${estoqueGarrafas}<br>`;
+                }
+        }
+    function turno()
+        {
+            divVendas.innerHTML ='';
+            divEncerrar.innerHTML = '';
+                selectTexto ='Cocos fechados';   
+                divEncerrar.innerHTML +=`
+                <br>
+                <br>
+                Vendas de ${selectTexto}<br>
+                Saldo de produto no estoque: ${estoqueGarrafas}<br>
+                Quantidade de vendas:${vendaGarrafas}<br>
+                Porcentagem de vendas:${vendaGarrafas/garrafas*100}%
+                `;
+                selectTexto ='Águas de coco engarrafadas'; 
+                divEncerrar.innerHTML +=`
+                <br>
+                <br>
+                Vendas de ${selectTexto}<br>
+                Saldo de produto no estoque: ${estoqueCocos} <br>
+                Quantidade de vendas:${vendaCocos}<br>
+                Porcentagem de vendas:${vendaCocos/cocos*100}%
+                `;
+        }
+</script>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viagem</title>
+</head>
+<body>
+    Destino de viagem:
+    <input id="inputViagem">
+    <br>
+    <button onclick="viagem()">Adicionar</button>
+    <button onclick="pviagem()">Primeira viagem</button>
+    <button onclick="tviagem()">Terceira viagem</button>
+    <button onclick="uviagem()">Ultima viagem</button>
+    <div id="divViagem"></div>
+</body>
+</html>
+<script>
+    var locais = [];
+    function viagem() 
+        {
+        var viagem = inputViagem.value;
+        locais[locais.length] =  viagem;
+        }
+    function pviagem()
+        {
+        if(locais[0]!= undefined)
+            {
+            divViagem.innerHTML =`${locais[0]}`
+            }
+            else
+                {
+                divViagem.innerHTML =`Ainda não viajou` 
+                }
+        }
+    function tviagem()
+        {
+        if(locais[2]!= undefined)
+            {
+            divViagem.innerHTML =`${locais[2]}`
+            }
+            else
+                {
+                divViagem.innerHTML =`Ainda não fez a terceira viagem` 
+                }
+        }
+    function uviagem()
+        {
+        if(locais[0]!= undefined)
+            {
+            divViagem.innerHTML =`${locais[locais.length-1]}`
+            }
+            else
+                {
+                divViagem.innerHTML =`Ainda não viajou` 
+                }
+        }
+</script>

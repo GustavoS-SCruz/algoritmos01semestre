@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes</title>
+</head>
+<body>
+    Cadastre os filmes que você mais gosta em ordem, do que mais gosta, o segundo que mais gosta e assim em diante:
+    <input id="inputFilme">
+    <button onclick="cadastrar()">Cadastrar filme</button>
+    <div id="divFilmes"></div>
+</body>
+</html>
+<script>
+    var listaFilmes = [];
+    var texto = '';
+    function cadastrar() 
+        {
+        var filmes = inputFilme.value;
+        listaFilmes[listaFilmes.length] = filmes;
+        texto = ''
+        texto +=`O seu filme favorito é: ${listaFilmes[0]} <br>`;
+        if(listaFilmes[2]!=undefined)
+            {
+            texto +=`Seu 3º filme favorito: ${listaFilmes[2]} <br>`;
+            }
+            else 
+                {
+                texto +=`Seu 3º filme favorito: ainda não existe<br>`;
+                }
+        texto +=`total de filmes cadastrados: ${listaFilmes.length} <br>`;
+        divFilmes.innerHTML = texto;
+        }
+</script>

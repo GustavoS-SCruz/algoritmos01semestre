@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutas</title>
+</head>
+<body>
+    Digite a fruta que quer: 
+    <input id="inputFruta"> 
+    <br>
+    <button onclick="fcfrutas()">Pesquisar</button>
+    <div id="divFruta"></div>
+</body>
+</html>
+<script>
+    var frutas = ['maçã','banana'];
+    function fcfrutas()
+        {
+        var fruta = inputFruta.value;
+        for (var i = 0; i < fruta.length; i++) {
+            if(frutas[i] == fruta)
+                {
+                divFruta.innerHTML = `A fruta ${fruta} existe na lista`;
+                i=fruta;
+                }
+                else
+                    {
+                     divFruta.innerHTML = `A fruta ${fruta} não existe na lista`;
+                    }
+            }
+        }
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque</title>
+</head>
+<body>
+    Digite o nome do produto:
+    <input id="inputProduto">
+    <br>
+    Digite o preço da compra
+    <input type="number" id="inputPreco">
+    <br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="relatorio()">Relatorio de estoque</button>
+    <div id="divRelatorio"></div>
+</body>
+</html>
+<script>
+    var estoqueNome = [];
+    var estoquePreco = [];
+    var texto ='';
+    var compraTotal = 0;
+    var vendaTotal = 0;
+    var produtoCaro = 0;
+    // var produtoCaroValor = 0;
+    var produtoBarato = 0;
+    // var produtoBaratoValor = 0;
+    function cadastrar() 
+        {
+        estoqueNome.push((inputProduto.value).toUpperCase());
+        estoquePreco.push(Number(inputPreco.value));
+        compraTotal += Number(inputPreco.value);
+        vendaTotal = (compraTotal *1.25).toFixed(2)
+        }
+    function relatorio() 
+        {
+        texto =`<br>Total de produtos:${estoqueNome.length} `;
+    for (let i = 0; i < estoqueNome.length; i++) {
+        texto += `<br><br><br> 
+        Produto ${i+1}: ${estoqueNome[i]} 
+        <br><br>
+        Preço de compra: R$${estoquePreco[i]}. Vender por R$${(estoquePreco[i]*1.25).toFixed(2)}`
+        if(estoquePreco[i]>estoquePreco[produtoCaro])
+            {
+            produtoCaro = i;
+            }
+        if(estoquePreco[i]<estoquePreco[produtoBarato])
+            {
+            produtoBarato = i;
+            }
+        }
+
+        texto +=`<br><br> Produto mais caro: ${estoqueNome[produtoCaro]} `
+        texto +=`<br><br> Produto mais barato:${estoqueNome[produtoBarato]}  `
+        texto +=`<br><br> A soma dos preços de compra dos produtos :${compraTotal} `
+        texto +=`<br><br> Média de venda dos produtos: ${vendaTotal/estoqueNome.length} `
+        divRelatorio.innerHTML = texto;
+        }
+
+</script>

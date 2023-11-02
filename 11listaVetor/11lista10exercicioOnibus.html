@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linhas de ônibus</title>
+</head>
+<body>
+    Digite o nome da linha que você pegou:
+    <input id="inputLinha">
+    <br>
+    <button onclick="bus()">Gravar busão</button>
+    <br>
+    <input id="inputPesquisar">
+    <button onclick="pesquisar()">Pesquisar</button>
+    <div id="divLinhas"></div>
+</body>
+</html>
+<script>
+    var listaLinhas = [];
+    var texto = '';
+    var texto2 = '';
+    function bus() 
+        {
+        listaLinhas.push((inputLinha.value).toLowerCase());
+        texto ='';
+        for (var i =  listaLinhas.length-1; i >= 0; i--) 
+            {
+            texto += `${i+1} Linha: ${listaLinhas[i]} <br>`;
+            }
+        divLinhas.innerHTML = texto;
+        }
+        function pesquisar() 
+        {
+        var total = 0;
+        texto2 ='';
+        for (var i = 0; i < listaLinhas.length; i++) 
+            {
+            if(inputPesquisar.value==listaLinhas[i])
+                {
+                if(total!=0)
+                    {
+                    texto2 += `, ${i+1}°`
+                    } else
+                    {
+                    texto2 += ` ${i+1}°`  
+                    }
+                    total++; 
+                }
+
+            }
+        divLinhas.innerHTML = `Você ja pegou essa linha nas viajens ${texto2} `;
+        }
+</script>

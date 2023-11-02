@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmes</title>
+</head>
+<body>
+    Cadastre os filmes que você gosta: 
+    <input id="inputFilme">
+    <button onclick="cadastrar()">Cadastrar filme</button>
+    <div id="divFilmes"></div>
+</body>
+</html>
+<script>
+    var listaFilmes = [];
+    var texto = '';
+    function cadastrar() 
+        {
+        var filmes = inputFilme.value;
+        listaFilmes[listaFilmes.length] = filmes;
+        if(listaFilmes.length % 2 == 0)
+            {
+            divFilmes.innerHTML += `   <span style="color: red;">${filmes}</span> <br>`;
+            }
+            else{
+                divFilmes.innerHTML += `   <span style="color: blue;">${filmes}</span> <br>`;
+                }
+        }
+</script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time de futebol</title>
+</head>
+<body>
+    <select id="selectResultado">
+        <option>Vitoria</option>
+        <option>Empate</option>
+        <option>Derrota</option>
+    </select>
+    <button onclick="registro()">Registrar jogo</button>
+    <br>
+    Digite qual o jogo deseja saber o resultado
+    <input type="number" id="inputJogo" oninput="jogo()">
+    <div id="divResultados"></div>
+    <div id="divJogo"></div>
+</body>
+</html>
+
+<script>
+    var resultados = [];
+    var pontos = 0;
+    var vitorias = 0;
+    var empates = 0;
+    var derrotas = 0;
+    function registro() 
+        {
+        resultados.push(selectResultado.value)
+        if(resultados[resultados.length-1] == 'Vitoria')
+            {
+            vitorias++;
+            pontos+=3;
+            }
+            else if(resultados[resultados.length-1] == 'Empate')
+                {
+                empates++;
+                pontos++;
+                }
+                else
+                    {
+                    derrotas++
+                    }
+        divResultados.innerHTML =`<br> O time teve ${vitorias} vitorias, ${empates} empates e ${derrotas} derrotas <br>
+        Pontuação total:${pontos} pontos <br>
+        Aproveitamento: ${vitorias/resultados.length*100}%`;
+        }
+    function jogo()
+        {
+        if(inputJogo.value>0 && inputJogo.value<=resultados.length)
+            {
+            divJogo.innerHTML= `<br>No ${inputJogo.value}° jogo, o time teve uma ${resultados[inputJogo.value-1]}`;
+            }
+            else
+                {
+                divJogo.innerHTML= `<br>Não foi cadastrado um jogo`;
+                }
+        }
+</script>

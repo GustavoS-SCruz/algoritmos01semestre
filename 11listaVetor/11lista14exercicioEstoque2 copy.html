@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque</title>
+</head>
+<body>
+    Digite o nome do produto:
+    <input id="inputProduto">
+    <br>
+    Digite o preço da compra
+    <input type="number" id="inputPreco">
+    <br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="relatorio()">Relatorio de estoque</button>
+    <div id="divRelatorio"></div>
+</body>
+</html>
+<script>
+    var estoqueNome = [];
+    var estoquePreco = [];
+    var texto ='';
+    function cadastrar() 
+        {
+        estoqueNome.push((inputProduto.value).toUpperCase());
+        estoquePreco.push(Number(inputPreco.value));
+        }
+    function relatorio() 
+        {
+        texto =`Total de produtos:${estoqueNome.length} `;
+    for (let i = 0; i < estoqueNome.length; i++) {
+        texto += `<br><br><br> 
+        Produto ${i+1}: ${estoqueNome[i]} 
+        <br><br>
+        Preço de compra: R$${estoquePreco[i]}. Vender por R$${(estoquePreco[i]*1.25).toFixed(2)}`
+        }
+        divRelatorio.innerHTML = texto;
+        }
+
+</script>

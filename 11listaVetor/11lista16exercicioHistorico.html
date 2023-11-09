@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historico numérico</title>
+</head>
+<body>
+    Digite qualquer número:
+    <input type="number" id="inputNum">
+    <br>
+    <button onclick="analisar()">Analisar histórico</button>
+    <div id="divNum"></div>
+</body>
+</html>
+<script>
+    var numeros = [];
+    var maiorNum = 0;
+    var menorNum = 0;
+    var texto = '';
+    function analisar() {
+        texto='';
+        numeros.push(inputNum.value);
+        for (let i = 0; i < numeros.length; i++) {
+            texto += `${i+1}° Número:${numeros[i]} <br><br>`;
+            if(Number(numeros[i])>Number(numeros[maiorNum]))
+                {
+                maiorNum = i; 
+                }
+            if(Number(numeros[i])<Number(numeros[menorNum]))
+                {
+                menorNum = i; 
+                }
+            }
+        texto += `<br><br> Maior:${numeros[maiorNum]} 
+        <br><br> Menor:${numeros[menorNum]}`
+        divNum.innerHTML = `${texto}`
+        
+    }
+</script>
